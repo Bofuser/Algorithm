@@ -1,4 +1,4 @@
-package com.company;
+package com.company.array;
 
 
 /**
@@ -27,9 +27,9 @@ public class Remove_element {
 //        System.out.println("方法一：");
 //        System.out.println(removeElement1(nums,val));
 
-        //方法二返回的是慢指针的索引值
-//        System.out.println("方法二：");
-//        System.out.println(removeElement2(nums,val));
+//        方法二返回的是慢指针的索引值
+        System.out.println("方法二：");
+        System.out.println(removeElement2(nums,val));
 
         //方法三chatGPT暴力解法(错误不太行)
 //        System.out.println("方法三：");
