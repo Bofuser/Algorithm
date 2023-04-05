@@ -42,6 +42,7 @@ public class isHappy {
         // 初始化一个 Set 集合
         Set<Integer> set = new HashSet<>();
 
+        //因为 1 也算是重复的数，如果 n = 1后面计算会一直为1（表示重复函数），所以当 n=1时要跳出循环。
         while(n != 1){
 
             //set集合存储 n
