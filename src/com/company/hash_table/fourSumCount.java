@@ -21,9 +21,9 @@ import java.util.Map;
  *  解题思路：
  *  （1）定义一个哈希表，用来存放数组1和数组2的值（这里简称大数组A）,map中的key用来存放大数组A的和，
  *  value用来存放大数组A中key值出现的次数。
- *  （2)遍历循环数组A
+ *  （2) 遍历循环数组A
  *  （3）遍历循环数组3和数组4的值（这里简称大数组B），由于 A+B = 0; A = -B。所以用来判断 -B 中是否包含值。
- *   如果包含了-B，则统计次数res+1，表示 nums1+nums2+nums3+nums4 = 0;有多少次。
+ *   如果包含了-B，则统计次数res+1，表示 nums1+nums2+nums3+nums4 = 0有多少次。
  *
  *
  *
@@ -52,7 +52,7 @@ public class fourSumCount {
 
         //定义一个哈希表map来存放所求的值。其中 key 用来存储 大数组A的值
         Map<Integer,Integer> map = new HashMap<>();
-        //定义一个res来统计
+        //定义一个res来统计 a+b+c+d = 0出现的次数
         int res = 0;
         //定义一个临时变量用来暂存数组A和数组B的值
         int temp;
