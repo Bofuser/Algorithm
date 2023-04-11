@@ -33,7 +33,22 @@ import java.util.Map;
 
 public class fourSumCount {
 
-    public int forSumCount(int [] nums1, int[] nums2, int[] nums3, int[] nums4){
+    public static void main(String[] args) {
+
+        int [] nums1 = new int[]{1,2};
+        int [] nums2 = new int[]{-2,-1};
+        int [] nums3 = new int[]{-1,2};
+        int [] nums4 = new int[]{0,2};
+
+        int a = forSumCount(nums1,nums2,nums3,nums4);
+        System.out.println(a);
+
+    }
+
+
+
+
+    public static int forSumCount(int [] nums1, int[] nums2, int[] nums3, int[] nums4){
 
         //定义一个哈希表map来存放所求的值。其中 key 用来存储 大数组A的值
         Map<Integer,Integer> map = new HashMap<>();
@@ -73,10 +88,10 @@ public class fourSumCount {
 
                 //由于 A+B = 0; A = -B。所以用来判断 -B 中是否包含值。
                 // 如果包含了-B，则统计次数res+1，表示 nums1+nums2+nums3+nums4 = 0;有多少次。
-                if(map.containsKey(0-temp)){
+                if(map.containsKey(-temp)){
 
                     //表示符合出现的键值次数加一
-                    res += map.get(0-temp);
+                    res += map.get(-temp);
 
                 }
 
