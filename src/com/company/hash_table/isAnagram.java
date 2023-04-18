@@ -3,13 +3,11 @@ package com.company.hash_table;
 /**
  * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
  * 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
- *
+ * <p>
  * 如：输入: s = "anagram", t = "nagaram" 输出: true
- *
+ * <p>
  * 输入: s = "rat", t = "car" 输出: false
- *
  */
-
 
 
 public class isAnagram {
@@ -20,19 +18,16 @@ public class isAnagram {
         String s = "anagram";
         String t = "nagaram";
 
-        System.out.println(isAnagram(s,t));
-
+        System.out.println(isAnagram(s, t));
 
 
     }
 
 
-
-
-    public static boolean isAnagram(String s, String t){
+    public static boolean isAnagram(String s, String t) {
 
         //初始化一个数组,大小为26包含26个字母，每个数组下标对应一个字符
-        int [] record = new int [26];
+        int[] record = new int[26];
 
         /**
          *
@@ -46,26 +41,30 @@ public class isAnagram {
          *
          */
 
-        for(int i = 0; i < s.length();i++){
+        for (int i = 0, j = 0; i < s.length(); i++) {
 
-             //表示 出现的字母在数组元素中加一
+            //表示 出现的字母在数组元素中加一
             record[s.charAt(i) - 'a']++;
-            //表示 出现的字母在数组元素中减一
-            record[t.charAt(i) - 'a']--;
-            //最后字符s和t出现相同的字符时，里面的数组元素相互抵消。
 
 
         }
 
-        for(int count : record){
-            if(count != 0){
+        for (int i = 0; i < t.length(); i++) {
+            //表示 出现的字母在数组元素中减一
+            record[t.charAt(i) - 'a']--;
+        }
+
+        //最后字符s和t出现相同的字符时，里面的数组元素相互抵消。 record为计数相等的字符，当record为0表示两个字符串相等。
+
+
+        for (int count : record) {
+            if (count != 0) {
                 return false;
             }
         }
 
         return true;
     }
-
 
 
 }
