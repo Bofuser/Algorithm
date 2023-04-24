@@ -14,6 +14,7 @@ package com.company.character_String;
  * 解释："leeto" 没有在 "leetcode" 中出现，所以返回 -1 。
  */
 
+
 public class strStr {
 
     public static void main(String[] args) {
@@ -26,9 +27,9 @@ public class strStr {
         String n3 = "aabaaf";
 
 
-        System.out.println(strStr1(h3, n3));
-        System.out.println(strStr1(h1, n1));
-        System.out.println(strStr1(h2, n2));
+        System.out.println(strStr(h3, n3));
+        /*System.out.println(strStr(h1, n1));
+        System.out.println(strStr(h2, n2));*/
 
 
     }
@@ -50,7 +51,7 @@ public class strStr {
         //注意i就从0开始
         for (int i = 0; i < haystack.length(); i++) {
 
-            //不匹配
+            //如果 haystack 的字符和 needle 的字符不匹配的话
             while (j >= 0 && haystack.charAt(i) != needle.charAt(j + 1)) {
                 // j 寻找之前匹配的位置
                 j = next[j];
@@ -132,7 +133,7 @@ public class strStr {
             if (haystack.charAt(i) == needle.charAt(0)) {
                 int j = 1;
 
-                //判断haystack的第二位元素和needle中的第二位元素是否相等，相等则元素继续往下判断
+                //判断 haystack 的第二位元素和needle中的第二位元素是否相等，相等则元素继续往下判断
                 while (j < needle.length() && haystack.charAt(i + j) == needle.charAt(j)) {
                     j++;
                 }
